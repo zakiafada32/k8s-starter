@@ -37,7 +37,7 @@ export const getToken = async (req: CustomRequest<Body>, res: Response) => {
     console.log('payload: ', payload);
 
     const accessToken = jwt.sign(payload, process.env.JWT_KEY!, {
-      expiresIn: '5m',
+      expiresIn: '10m',
     });
 
     const refreshToken = jwt.sign(payload, process.env.JWT_REFRESH_KEY!);

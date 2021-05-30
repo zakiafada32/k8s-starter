@@ -16,7 +16,7 @@ export const updateUser = async (req: CustomRequest<Body>, res: Response) => {
     const { name } = req.body;
 
     if (name.length === 0) {
-      throw new Error('Filed name must not be empty');
+      throw new Error('Field name must not be empty');
     }
 
     const user = await UserModel.findById(userId);

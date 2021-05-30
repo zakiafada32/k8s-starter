@@ -20,18 +20,25 @@ export const currentUser = (
   res: Response,
   next: NextFunction
 ) => {
-  const authorization = req.headers['authorization'];
-  if (!authorization) {
-    return next();
+  try {
+    const authorization = req.headers['authorization'];
+    if (!authorization) {
+      return next();
+    }
+
+    const [prefix, token] = authorization.split(' ');
+    if (prefix !== 'Bearer') {
+      return next();
+    }
+
+    const user = jwt.verify(token, process.env.JWT_KEY!) as User;
+    req.currentUser = user;
+
+    next();
+  } catch (err) {
+    res.status(400).send({
+      status: 'Unsuccessful',
+      message: err.message,
+    });
   }
-
-  const [prefix, token] = authorization.split(' ');
-  if (prefix !== 'Bearer') {
-    return next();
-  }
-
-  const user = jwt.verify(token, process.env.JWT_KEY!) as User;
-  req.currentUser = user;
-
-  next();
 };

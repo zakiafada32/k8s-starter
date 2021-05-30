@@ -12,7 +12,7 @@ interface CustomRequest<T> extends Request {
 export const user = async (req: CustomRequest<Body>, res: Response) => {
   try {
     const userId = req.currentUser.id;
-    if (userId) {
+    if (!userId) {
       throw new Error('Not authorized');
     }
 
