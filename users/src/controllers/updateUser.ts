@@ -4,9 +4,6 @@ import UserModel from '../models/user';
 
 interface Body {
   name: string;
-  // email: string;
-  // password: string;
-  // role: Roles;
 }
 
 interface CustomRequest<T> extends Request {
@@ -17,6 +14,10 @@ export const updateUser = async (req: CustomRequest<Body>, res: Response) => {
   try {
     const userId = req.params.userId;
     const { name } = req.body;
+
+    if (name.length === 0) {
+      throw new Error('Filed name must not be empty');
+    }
 
     const user = await UserModel.findById(userId);
     if (!user) {

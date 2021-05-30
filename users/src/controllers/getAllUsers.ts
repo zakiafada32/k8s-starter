@@ -1,20 +1,15 @@
 import { Request, Response } from 'express';
 import UserModel from '../models/user';
 
-export const getUser = async (req: Request, res: Response) => {
+export const getAllUsers = async (req: Request, res: Response) => {
   try {
-    const userId = req.params.userId;
-
-    const user = await UserModel.findById(userId);
-    if (!user) {
-      throw new Error('User not found');
-    }
+    const users = await UserModel.find({});
 
     res.status(200).send({
       status: 'success',
       message: 'User updated',
       data: {
-        user,
+        users,
       },
     });
   } catch (err) {

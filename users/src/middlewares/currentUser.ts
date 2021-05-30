@@ -10,7 +10,7 @@ interface User {
 declare global {
   namespace Express {
     interface Request {
-      user: User;
+      currentUser: User;
     }
   }
 }
@@ -31,7 +31,7 @@ export const currentUser = (
   }
 
   const user = jwt.verify(token, process.env.JWT_KEY!) as User;
-  req.user = user;
+  req.currentUser = user;
 
   next();
 };
