@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import bycript from 'bcrypt';
+import bcrypt from 'bcrypt';
 import UserModel from '../models/user';
 import RefreshTokenModel, { RefreshToken } from '../models/token';
 
@@ -22,7 +22,7 @@ export const getToken = async (req: CustomRequest<Body>, res: Response) => {
       throw new Error('Invalid User');
     }
 
-    const passwordMatch = await bycript.compare(password, user.password);
+    const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
       throw new Error('Invalid Password');
     }
@@ -50,8 +50,10 @@ export const getToken = async (req: CustomRequest<Body>, res: Response) => {
     res.status(200).send({
       status: 'success',
       message: 'new refresh token created',
-      accessToken,
-      refreshToken,
+      data: {
+        accessToken,
+        refreshToken,
+      },
     });
   } catch (err) {
     res.status(400).send({

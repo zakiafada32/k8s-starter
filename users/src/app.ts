@@ -1,43 +1,41 @@
-import express, { Request, Response } from 'express';
-import mongoose from 'mongoose';
-import { checkEnv } from './env';
+import express from 'express';
 import dotenv from 'dotenv';
+import { checkEnv, connectDB } from './config';
+import { currentUser } from './middlewares';
+import { createUser } from './controllers';
 
 dotenv.config();
-checkEnv();
 
 const app = express();
 
+checkEnv();
+connectDB();
+
 app.use(express.json());
 
-app.get('/all', (req: Request, res: Response) => {
-  res.send('get all users'); // admin
-});
+app.use(currentUser);
 
-app.get('/:userId', (req: Request, res: Response) => {
-  res.send('get user'); // admin and users
-});
+// app.get('/all', () => {
+//   // admin
+// });
 
-app.post('/create', (req: Request, res: Response) => {
-  res.send('create user'); // admin
-});
+// app.get('/:userId', () => {
+//   // admin
+// });
 
-app.delete('/delete/:userId', (req: Request, res: Response) => {
-  res.send('delete user'); // admin
-});
+app.post('/create', createUser);
 
-app.patch('/update/:userId', (req: Request, res: Response) => {
-  res.send('update user'); // admin
-});
+// app.delete('/delete/:userId', () => {
+//   // admin
+// });
 
-mongoose
-  .connect(process.env.MONGO_URI!, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then(() => console.log('mongodb connected'))
-  .catch((error) => console.error('mongodb not connected'));
+// app.patch('/update/:userId', () => {
+//   // admin
+// });
+
+app.get('/', () => {
+  // user and admin
+});
 
 app.listen('4000', () => {
   console.log('users listening port 4000');

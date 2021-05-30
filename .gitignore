@@ -3,3 +3,4 @@ script
 note.txt
 dashboard.yaml
 docker-hub.sh
+.env

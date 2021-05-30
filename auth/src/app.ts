@@ -12,8 +12,8 @@ connectDB();
 
 app.use(express.json());
 
-app.use('/token/refresh', refreshToken);
-app.use('/token', getToken);
+app.post('/token/refresh', refreshToken);
+app.post('/token', getToken);
 
 app.listen('3000', () => {
   console.log('auth: listening to port 3000');

@@ -46,13 +46,13 @@ export const refreshToken = async (req: CustomRequest<Body>, res: Response) => {
       { expiresIn: '5m' }
     );
 
-    res
-      .status(200)
-      .send({
-        status: 'success',
-        message: 'access token created',
+    res.status(200).send({
+      status: 'success',
+      message: 'access token created',
+      data: {
         accessToken,
-      });
+      },
+    });
   } catch (err) {
     res.status(400).send({
       status: 'Unsuccessful',
