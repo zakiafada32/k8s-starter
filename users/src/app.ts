@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { checkEnv, connectDB } from './config';
 import { currentUser } from './middlewares';
-import { createUser } from './controllers';
+import { createUser, deleteUser, updateUser } from './controllers';
 
 dotenv.config();
 
@@ -24,14 +24,8 @@ app.use(currentUser);
 // });
 
 app.post('/create', createUser);
-
-// app.delete('/delete/:userId', () => {
-//   // admin
-// });
-
-// app.patch('/update/:userId', () => {
-//   // admin
-// });
+app.delete('/delete/:userId', deleteUser);
+app.patch('/update/:userId', updateUser);
 
 app.get('/', () => {
   // user and admin
