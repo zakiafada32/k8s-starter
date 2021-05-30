@@ -1,13 +1,20 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import dotenv from 'dotenv';
+import { getToken, refreshToken } from './controllers';
+import { checkEnv, connectDB } from './config';
+
+dotenv.config();
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
+checkEnv();
+connectDB();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('auth express skaffold');
-});
+app.use(express.json());
+
+app.use('/token/refresh', refreshToken);
+app.use('/token', getToken);
 
 app.listen('3000', () => {
-  console.log('auth');
+  console.log('auth: listening to port 3000');
 });
