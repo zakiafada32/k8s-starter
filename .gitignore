@@ -2,3 +2,4 @@ node_modules
 script
 note.txt
 dashboard.yaml
+docker-hub.sh

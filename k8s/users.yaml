@@ -31,3 +31,16 @@ spec:
           image: zakiafada32/sc-users:0.1
           ports:
             - containerPort: 4000
+          env:
+            - name: MONGO_URI
+              value: 'mongodb://mongo-cluster-ip-service:27017/sejutacita'
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-key-secret
+                  key: JWT_KEY
+            - name: JWT_REFRESH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-refresh-secret
+                  key: JWT_REFRESH_KEY
