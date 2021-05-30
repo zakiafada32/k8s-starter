@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: zakiafada32/sc-auth:1.1
+          image: zakiafada32/sc-auth
           ports:
             - containerPort: 3000
           env:
