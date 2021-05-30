@@ -24,7 +24,6 @@ export const createUser = async (req: CustomRequest<Body>, res: Response) => {
       throw new Error('Email not valid');
     }
     const passwordLength = password.length;
-    console.log('passwordLength: ', passwordLength);
     if (passwordLength < 6 || passwordLength > 12) {
       throw new Error('Password must be between 6 and 12 character');
     }

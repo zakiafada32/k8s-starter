@@ -1,6 +1,7 @@
 node_modules
-script
 note.txt
 dashboard.yaml
 docker-hub.sh
 .env
+docs
+swagger.json

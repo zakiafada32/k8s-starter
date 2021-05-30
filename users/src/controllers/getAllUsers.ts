@@ -7,7 +7,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
 
     res.status(200).send({
       status: 'success',
-      message: 'User updated',
+      message: 'List of users',
       data: {
         users,
       },

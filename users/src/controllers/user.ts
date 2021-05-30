@@ -23,7 +23,7 @@ export const user = async (req: CustomRequest<Body>, res: Response) => {
 
     res.status(200).send({
       status: 'success',
-      message: 'User updated',
+      message: 'Get current user',
       data: {
         user,
       },

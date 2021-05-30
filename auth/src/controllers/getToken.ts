@@ -14,7 +14,6 @@ interface CustomRequest<T> extends Request {
 
 export const getToken = async (req: CustomRequest<Body>, res: Response) => {
   try {
-    console.log('req.body: ', req.body);
     const { email, password } = req.body;
 
     const user = await UserModel.findOne({ email });
@@ -33,8 +32,6 @@ export const getToken = async (req: CustomRequest<Body>, res: Response) => {
       email: user.email,
       role: user.role,
     };
-
-    console.log('payload: ', payload);
 
     const accessToken = jwt.sign(payload, process.env.JWT_KEY!, {
       expiresIn: '10m',

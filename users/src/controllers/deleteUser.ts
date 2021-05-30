@@ -5,7 +5,6 @@ export const deleteUser = async (req: Request, res: Response) => {
   try {
     const userId = req.params.userId;
     const user = await UserModel.findById(userId);
-    console.log(user);
     if (!user) {
       throw new Error('User not found');
     }
@@ -16,7 +15,7 @@ export const deleteUser = async (req: Request, res: Response) => {
       status: 'success',
       message: 'User deleted',
       data: {
-        userId,
+        user,
       },
     });
   } catch (err) {
