@@ -25,7 +25,7 @@ export const createUser = async (req: CustomRequest<Body>, res: Response) => {
     }
     const passwordLength = password.length;
     if (passwordLength < 6 || passwordLength > 12) {
-      throw new Error('Password must be between 6 and 12 character');
+      throw new Error('Password must be between 6 and 12 characters');
     }
     if (name.length === 0) {
       throw new Error('Name not valid');

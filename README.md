@@ -25,6 +25,18 @@
 
 ## Architecture
 
+![architecture](https://raw.githubusercontent.com/zakiafada32/sc-crud-kubernetes/main/diagram/architecture.png)
+
+- [](https://)
+
 ## Flow Login API
 
+![login-flow](https://raw.githubusercontent.com/zakiafada32/sc-crud-kubernetes/main/diagram/login-flow.png)
+
+- [login-flow](https://github.com/zakiafada32/sc-crud-kubernetes/blob/main/diagram/login-flow.png)
+
 ## Flow CRUD API
+
+![crud-flow](https://raw.githubusercontent.com/zakiafada32/sc-crud-kubernetes/main/diagram/crud-flow.png)
+
+- [crud-flow](https://github.com/zakiafada32/sc-crud-kubernetes/blob/main/diagram/crud-flow.png)
