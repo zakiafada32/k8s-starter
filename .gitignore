@@ -5,3 +5,6 @@ docker-hub.sh
 .env
 docs
 swagger.json
+.travis.yml
+deploy.sh
+services-account-2.json.enc

@@ -12,7 +12,7 @@ interface CustomRequest<T> extends Request {
   body: T;
 }
 
-export const getToken = async (req: CustomRequest<Body>, res: Response) => {
+export const login = async (req: CustomRequest<Body>, res: Response) => {
   try {
     const { email, password } = req.body;
 
@@ -45,8 +45,8 @@ export const getToken = async (req: CustomRequest<Body>, res: Response) => {
     await refresh.save();
 
     res.status(200).send({
-      status: 'success',
-      message: 'new refresh token created',
+      status: 'Success',
+      message: 'Login success and new refresh token created',
       data: {
         accessToken,
         refreshToken,

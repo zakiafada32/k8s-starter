@@ -12,7 +12,7 @@ export const requireAuth = (
 
     next();
   } catch (err) {
-    res.status(400).send({
+    res.status(401).send({
       status: 'Unsuccessful',
       message: err.message,
     });

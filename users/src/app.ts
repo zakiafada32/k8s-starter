@@ -22,7 +22,7 @@ app.use(express.json());
 
 app.use(currentUser);
 
-app.post('/create', admin, createUser);
+app.post('/register', admin, createUser);
 app.delete('/delete/:userId', admin, deleteUser);
 app.patch('/update/:userId', admin, updateUser);
 app.get('/all', admin, getAllUsers);

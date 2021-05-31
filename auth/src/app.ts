@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { getToken, refreshToken } from './controllers';
+import { login, refreshToken } from './controllers';
 import { checkEnv, connectDB } from './config';
 
 dotenv.config();
@@ -12,8 +12,8 @@ connectDB();
 
 app.use(express.json());
 
-app.post('/token/refresh', refreshToken);
-app.post('/token', getToken);
+app.post('/login', login);
+app.post('/refresh', refreshToken);
 
 app.listen('3000', () => {
   console.log('auth: listening to port 3000');

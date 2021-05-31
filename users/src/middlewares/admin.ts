@@ -8,7 +8,7 @@ export const admin = (req: Request, res: Response, next: NextFunction) => {
 
     next();
   } catch (err) {
-    res.status(400).send({
+    res.status(401).send({
       status: 'Unsuccessful',
       message: err.message,
     });

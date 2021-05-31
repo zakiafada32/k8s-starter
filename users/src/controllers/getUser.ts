@@ -11,7 +11,7 @@ export const getUser = async (req: Request, res: Response) => {
     }
 
     res.status(200).send({
-      status: 'success',
+      status: 'Success',
       message: 'Get user by Id',
       data: {
         user,

@@ -28,7 +28,7 @@ export const updateUser = async (req: CustomRequest<Body>, res: Response) => {
     await user.save();
 
     res.status(200).send({
-      status: 'success',
+      status: 'Success',
       message: 'User updated',
       data: {
         user,

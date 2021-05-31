@@ -47,8 +47,8 @@ export const refreshToken = async (req: CustomRequest<Body>, res: Response) => {
     );
 
     res.status(200).send({
-      status: 'success',
-      message: 'access token created',
+      status: 'Success',
+      message: 'Access token created',
       data: {
         accessToken,
       },

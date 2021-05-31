@@ -50,8 +50,8 @@ export const createUser = async (req: CustomRequest<Body>, res: Response) => {
     });
     await user.save();
 
-    res.status(200).send({
-      status: 'success',
+    res.status(201).send({
+      status: 'Success',
       message: 'new user created',
       data: {
         user,

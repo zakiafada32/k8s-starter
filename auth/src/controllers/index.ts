@@ -1,2 +1,2 @@
-export * from './getToken';
+export * from './login';
 export * from './refreshToken';

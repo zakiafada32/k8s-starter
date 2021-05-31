@@ -6,7 +6,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
     const users = await UserModel.find({});
 
     res.status(200).send({
-      status: 'success',
+      status: 'Success',
       message: 'List of users',
       data: {
         users,

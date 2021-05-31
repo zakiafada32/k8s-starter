@@ -12,7 +12,7 @@ export const deleteUser = async (req: Request, res: Response) => {
     await user.delete();
 
     res.status(200).send({
-      status: 'success',
+      status: 'Success',
       message: 'User deleted',
       data: {
         user,
