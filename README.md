@@ -7,7 +7,9 @@
   - Email: zaki@sejutacita.com
   - Password: 12345678
 
-- ### API Documentation
+- ### Host
+  - URL: http://34.87.45.29/
+- ### API documentation
 
   - [API documentation Postman](https://documenter.getpostman.com/view/7470055/TzXzEdCL)
 
@@ -27,7 +29,7 @@
 
 ![architecture](https://raw.githubusercontent.com/zakiafada32/sc-crud-kubernetes/main/diagram/architecture.png)
 
-- [](https://)
+- [architecture](https://github.com/zakiafada32/sc-crud-kubernetes/blob/main/diagram/architecture.png)
 
 ## Flow Login API
 
