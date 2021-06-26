@@ -1,12 +1,6 @@
-# SejutaCita - CRUD API Kubernetes
+# Basic CRUD API Kubernetes
 
 ## App info
-
-- ### Admin credentials
-
-  - Email: zaki@sejutacita.com
-  - Password: 12345678
-
 - ### Host
   - URL: http://34.87.45.29/
 - ### API documentation
