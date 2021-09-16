@@ -1,11 +1,6 @@
 # Basic CRUD API Kubernetes
 
 ## App info
-- ### Host
-  - URL: http://34.87.45.29/
-- ### API documentation
-
-  - [API documentation Postman](https://documenter.getpostman.com/view/7470055/TzXzEdCL)
 
 - ### Features
   - Authentication
